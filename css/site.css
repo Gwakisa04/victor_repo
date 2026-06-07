@@ -1,0 +1,58 @@
+:root {
+    --site-header-h: 5.5rem;
+    --site-subnav-h: 0px;
+    --site-content-pt: 6.5rem;
+    --site-hero-pt: 6.5rem;
+}
+
+.site-header {
+    box-sizing: border-box;
+}
+
+.site-header .gradient-btn {
+    background: linear-gradient(135deg, #c9c6c5 0%, #353434 100%);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.site-header .gradient-btn:hover {
+    transform: scale(1.05);
+}
+
+#site-subnav {
+    top: var(--site-header-h);
+}
+
+.site-content {
+    padding-top: var(--site-content-pt);
+}
+
+.site-hero {
+    padding-top: var(--site-hero-pt);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.site-hero--end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#mobile-menu a {
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+#mobile-menu a:hover {
+    color: #e5e2e1;
+    letter-spacing: 0.05em;
+}
+
+.service-link-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.glass-pill .site-nav-link.text-primary {
+    color: #e5e2e1;
+    font-weight: 800;
+    border-bottom: none;
+    padding-bottom: 0;
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work — VICTOR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "surface-variant": "#353434",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-primary-container": "#7b7a79",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-container-high": "#2b2a2a",
+                    "secondary-container": "#404b51",
+                    "tertiary-fixed": "#dee2ee",
+                    "on-secondary-fixed": "#131d23",
+                    "on-surface": "#e5e2e1",
+                    "surface-dim": "#141313",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#bdc8d0",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#1c1b1b",
+                    "background": "#0c0c0c",
+                    "surface-container": "#201f1f",
+                    "on-tertiary": "#2c3139",
+                    "on-secondary-container": "#afbac2",
+                    "on-secondary": "#273238",
+                    "primary": "#e5e2e1",
+                    "outline-variant": "#444748",
+                    "surface-tint": "#c9c6c5",
+                    "on-primary": "#313030",
+                    "secondary": "#bdc8d0",
+                    "surface-container-highest": "#353434",
+                    "tertiary-container": "#070c14",
+                    "surface-bright": "#3a3939",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-container": "#0c0c0c",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "inverse-primary": "#5f5e5e",
+                    "surface": "#141313",
+                    "on-surface-variant": "#c4c7c7",
+                    "tertiary": "#c2c6d2",
+                    "outline": "#8e9192",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed-dim": "#c2c6d2",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#424750",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#d9e4ec",
+                    "on-tertiary-container": "#757a85",
+                    "on-tertiary-fixed": "#171c24"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "5vw",
+                    "element-gap": "2rem",
+                    "section-gap": "clamp(4rem, 15vh, 12rem)"
+            },
+            "fontFamily": {
+                    "display-lg": ["Kanit"],
+                    "body-lg": ["Kanit"],
+                    "headline-md": ["Kanit"],
+                    "body-md": ["Kanit"],
+                    "display-xl": ["Kanit"],
+                    "label-caps": ["Kanit"]
+            },
+            "fontSize": {
+                    "display-lg": ["clamp(2.5rem, 6vw, 5rem)", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "headline-md": ["clamp(1.5rem, 4vw, 2.5rem)", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-xl": ["clamp(3.5rem, 10vw, 8rem)", {"lineHeight": "0.9", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0C0C0C; scroll-behavior: smooth; }
+        .hero-heading { font-family: 'Kanit'; font-weight: 900; text-transform: uppercase; }
+        .magnet-container { perspective: 1000px; }
+        .marquee-track { display: flex; width: max-content; }
+        .character-text span { opacity: 0.1; transition: opacity 0.3s ease; }
+        .character-text span.active { opacity: 1; }
+        .sticky-card { position: sticky; top: 10vh; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .gradient-btn {
+            background: linear-gradient(135deg, #c9c6c5 0%, #353434 100%);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .gradient-btn:hover { transform: scale(1.05); }
+    </style>
+<link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="text-on-surface selection:bg-primary selection:text-background overflow-x-hidden" data-page="work">
+<header class="site-header fixed top-0 left-0 w-full z-[60] flex justify-between items-center px-container-padding py-6 bg-background/80 backdrop-blur-lg border-b border-outline-variant/20 transition-transform duration-300" id="site-header">
+<a class="font-display-lg text-headline-md tracking-tighter text-on-surface hover:text-primary transition-colors" href="home.html">VICTOR</a>
+<button type="button" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<nav class="hidden md:flex items-center gap-8" id="site-nav">
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="work" href="work.html">Work</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="services" href="service.html">Services</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="about" href="about.html">About</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="contact" href="contact.html">Contact</a>
+</nav>
+<a class="hidden md:flex gradient-btn px-6 py-2.5 rounded-full text-on-primary font-label-caps items-center gap-2 text-sm" href="mailto:www44victor@gmail.com">LET'S TALK</a>
+</header>
+<div class="fixed inset-0 z-[70] bg-background/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+<button type="button" class="absolute top-6 right-[5vw] text-on-surface p-2" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="home" href="home.html">Home</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="work" href="work.html">Work</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="services" href="service.html">Services</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="about" href="about.html">About</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="contact" href="contact.html">Contact</a>
+<a class="gradient-btn px-10 py-4 rounded-full text-on-primary font-label-caps mt-4" href="mailto:www44victor@gmail.com">LET'S TALK</a>
+</div>
+<main>
+<section class="site-hero relative flex flex-col justify-between pb-12 px-container-padding overflow-hidden">
+<div class="flex-1 flex flex-col justify-center relative z-10">
+<h1 class="hero-heading font-display-xl text-display-xl leading-[0.8] mb-8 opacity-0 translate-y-10 animate-entrance">
+                SELECTED <br/> WORK
+            </h1>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[716px] magnet-container hidden lg:block">
+<div class="w-full h-full flex items-center justify-center pointer-events-none" id="magnet-target">
+<img alt="Victor Moses Mwakyoma - Full-Stack Developer" class="w-auto h-full object-cover rounded-xl shadow-2xl pointer-events-auto transition-transform duration-200 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLvTQ_9IuyVvwzOYGiGwbgxhGUo_UORbE2e6JpfhB9jHdl4qSRHzO2nfyLrqUqR7MepPtxbAzxQb6abIEnjI3EuKWHNvZLfP-S1S_gJ21atZs7HaGS1CWmx3WPfWNQNezb7NhYipVUOtnt9sbr5vq9Kvqe9lxnnM0-_hIz7rjEYQgWCk9HvBvg6WMpmavWmDFC6ADvB3XnwN3T4uMgauG-B3G3VEFJgy2P5CQcz4CQqKt4HRhESnM1TfsQ"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 relative z-20">
+<div class="max-w-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                    15+ real-world projects across HR, e-commerce, and AI — built to solve business problems with scalable, production-ready code.
+                </p>
+</div>
+<a class="gradient-btn px-10 py-5 rounded-full text-on-primary font-label-caps flex items-center gap-3" href="contact.html" id="contact-btn">
+                LET'S TALK 
+                <span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+</section>
+<!-- Projects -->
+<section class="py-section-gap px-container-padding bg-background" id="projects">
+<div class="flex flex-col gap-24">
+<!-- Project 1: SecureHR -->
+<div class="sticky-card bg-surface-container border border-outline-variant/30 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500" style="z-index: 1;">
+<div class="p-12 flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-primary">PROJECT 01</span>
+<h3 class="font-display-lg text-headline-md mt-4">SECUREHR SYSTEM</h3>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">PHP</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">MYSQL</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">LARAVEL</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">Comprehensive HR and payroll management system that centralizes employee data and automates calculations.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 gap-4 h-[500px]">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Software Interface Render" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmD2pkZoDV6FT9Fe-SXpF1NBZLF-z8V2igqiZqFCM6_6M2XLWVDAcNuxuo53MHgF3iHjMe7ceScPOlQb9G8h1NDN6Omb5_eRgybpsWcoAAmeaexKtLg3hvQYopJW3Vx3v_EUUSuNvvH8-TPj-iQyl2C4D19nxJ2ebmLKC3kdKqHYeBDDyCiiqKMAFVjwYG0RLrFjfJxq-4Qdr2siOfEjicluAK4Dwi2tfdAPtQbMKJFCCxRGnSBpBg-d-lkur3aIeJxt6-l9tl760"/>
+</div>
+<div class="grid grid-rows-2 gap-4 h-full">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Code Detail" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIUqbCoCjmcwj3Za0TKYr-Jy2YXyXIWx5-yu2EozxaCfMQlK-EAZqvOf7JaigGQwfPstY_v3IH4YPVp_zy9fgz56b9P2jld0JlgbycVLHMEm11zQYX735tkaF4msZCsCHpbW26fk-7X7lzj4GfPohfMmC0u7eQqDC7pfMUJVtYucokRY5UW9rTG-3fFt-6KTP23lMgQBMhScQ43ZrGb9W3VXbBEf9vP4KSVdM8c3onC5kQuiPFYbu9EhWcu1lh9d9Td0pA-vHcl-0"/>
+</div>
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Data Visualization" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbFTCCqQJJhltg1GHJUEtG-sZmwN2AE8quPWvpeVd9J9ytXnWaNydIyK53oPJ2bIOucj7ORHOqeChoaKwqTiWc6R5mi8vTaOS5uQY9d-ioF568k7MjAX0zJ4Oy-GQy8pOfngrdSJub1wncmFTq28tVPE4JIAAYS0lGj1zyKZOhyjAjAwWDG1EjRayz-tis0RGd6sa9SEMFqZrsNLGq-5ZZeSMPN7IW_abwLN3K3JlDMnPtN3hf_QG7uMiaeZp963D8oM95uVptwg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: E-Commerce -->
+<div class="sticky-card bg-surface-container-high border border-outline-variant/30 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500" style="z-index: 2; top: 15vh;">
+<div class="p-12 flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-primary">PROJECT 02</span>
+<h3 class="font-display-lg text-headline-md mt-4">E-COMMERCE PLATFORM</h3>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">REACT</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">NODE.JS</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">MONGODB</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">Full-featured system with inventory management, order processing, and customer relationship insights for wholesalers.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 gap-4 h-[500px]">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Digital Platform Visualization" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGHKf9dx_aE84xlpXY1R7fR6-fJlIcbR6MtwaTizbAe95TiVIOMVqlKCVcyK-wZlqr1v6UnQT3c5Ixrr0zk8NxCZesygGuEA8kyzunfFvxtj3wBuRzFZUgRZT1tiFisEe-7lCRsM7iLv6sIIUbrl9Ip8wFvfb005RbjWYuy60j0Ua6zUqE_Sx25B_vWZvRHQsqQ6vOkna4QFOynv4Vg4jsi4f6VQ5RUfidEzs86Jno9YkyZATcdSIeZEGhvEmH4OdpoiCV18bmdMo"/>
+</div>
+<div class="grid grid-rows-2 gap-4 h-full">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Modern UI components" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIWqwWmV6Qv05wYuH4KnH9HdOJ1dbaFDCT6AwEN56bxUYMIv25BG4hjprUd1Gtf0TH-mTOgxojl7xl6Scd1nKJ-bMtTaKZ3oDae-mJXwx1gHLKELfgLGu6X76hX8TiWpTCbR3db-FyNc7r1rvCvaGUBnvXHzQf_kxmEb2n4jKoSBU2RmujHbo42MS1dHGNO4Gcy49bKsNUbhFRZ1rwL9nb_Z1XvVJczI9Eu4mTLDcHlI2V3u4rDDvp0sLBVqoRsRDnR-S-io4e_c"/>
+</div>
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Abstract digital architecture" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDygZ3VnwYXAcIXzcmuPYxft-EPSepu3-QypONkPS-ASMJ7m3d3Kc5MDKYrAyf71SDsM2sDRcDlC-HYk0hIji0PRAAs6t85iZVGa7HasioGXTo1ECjkj7Uk-Jyp1PrPOiLKp8mA7BCa3SJIXTb7kH14n_wNCrrmM7St8GZIlIMIzxvEq8FreQCPhZ-Ptkkpj-WiYFVCqYymj92J9vKtkoYsxcNieBwM52SJEfbWmTTseFcnIew34hZp7kpFrice8Yzt3se43DX4bd4"/>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sticky-card bg-surface-container border border-outline-variant/30 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500" style="z-index: 3; top: 20vh;">
+<div class="p-12 flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-primary">PROJECT 03</span>
+<h3 class="font-display-lg text-headline-md mt-4">AI INTEGRATIONS &amp; TRAINING</h3>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">PYTHON</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">TENSORFLOW</span>
+<span class="text-xs border border-primary/20 px-2 py-1 rounded text-primary/60">OPENAI API</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">Custom AI implementation and staff training for businesses looking to leverage large language models and automated intelligent workflows.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 gap-4 h-[500px]">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="AI Integration Visualization" class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjnK_62FcBefMfg_MgNTB_uvdQ9Y8lwx-20oOMSXy_lUyt1l1ohgCdFh45VIAajSfYHzCcWxNAOWjL8Ru7l3bdcmNnMuzcvXP47RXLnMGHKVGAUICvnzL2264uRY92CBNcMbo1sQ2vPhwJdli_D-0g-RDRU1sj_xNm6MSLvYboQxSTOqkjmfemrgR92C1gQSrRalUBNQ1Ksc_kWnor60HY__0SwPQPwi9hXbMq_CGsRUXvBHJkXeV-bYj0GfnJmP6-gt6ZLcX6OGk"/>
+</div>
+<div class="grid grid-rows-2 gap-4 h-full">
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Neural Network Detail" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIUqbCoCjmcwj3Za0TKYr-Jy2YXyXIWx5-yu2EozxaCfMQlK-EAZqvOf7JaigGQwfPstY_v3IH4YPVp_zy9fgz56b9P2jld0JlgbycVLHMEm11zQYX735tkaF4msZCsCHpbW26fk-7X7lzj4GfPohfMmC0u7eQqDC7pfMUJVtYucokRY5UW9rTG-3fFt-6KTP23lMgQBMhScQ43ZrGb9W3VXbBEf9vP4KSVdM8c3onC5kQuiPFYbu9EhWcu1lh9d9Td0pA-vHcl-0"/>
+</div>
+<div class="rounded-xl overflow-hidden h-full">
+<img alt="Data Processing" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbFTCCqQJJhltg1GHJUEtG-sZmwN2AE8quPWvpeVd9J9ytXnWaNydIyK53oPJ2bIOucj7ORHOqeChoaKwqTiWc6R5mi8vTaOS5uQY9d-ioF568k7MjAX0zJ4Oy-GQy8pOfngrdSJub1wncmFTq28tVPE4JIAAYS0lGj1zyKZOhyjAjAwWDG1EjRayz-tis0RGd6sa9SEMFqZrsNLGq-5ZZeSMPN7IW_abwLN3K3JlDMnPtN3hf_QG7uMiaeZp963D8oM95uVptwg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA -->
+<section class="py-section-gap px-container-padding bg-surface-container-lowest" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h2 class="font-display-lg text-display-lg mb-8">GET IN TOUCH.</h2>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<a class="font-body-lg text-on-surface hover:text-primary transition-colors" href="mailto:www44victor@gmail.com">www44victor@gmail.com</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-lg text-on-surface">Ubungo, Dar es Salaam, Tanzania</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">phone</span>
+<a class="font-body-lg text-on-surface" href="tel:+255616509415">+255 616 509 415</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-end items-start md:items-end">
+<p class="font-label-caps text-on-surface-variant opacity-60 mb-4">AVAILABLE FOR NEW OPPORTUNITIES</p>
+<a class="gradient-btn px-10 py-5 rounded-full text-on-primary font-label-caps inline-flex items-center gap-3" href="contact.html">
+                    GET IN TOUCH
+                </a>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full px-container-padding py-element-gap flex flex-col md:flex-row justify-between items-center gap-4 bg-background border-t border-outline-variant/10">
+<a class="font-display-lg text-headline-md text-on-surface hover:text-primary transition-colors" href="home.html">VICTOR</a>
+<div class="flex flex-wrap gap-6 md:gap-8 justify-center">
+<a class="text-on-surface-variant font-label-caps hover:text-primary transition-all duration-300" href="work.html">Work</a>
+<a class="text-on-surface-variant font-label-caps hover:text-primary transition-all duration-300" href="service.html">Services</a>
+<a class="text-on-surface-variant font-label-caps hover:text-primary transition-all duration-300" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-caps hover:text-primary transition-all duration-300" href="contact.html">Contact</a>
+</div>
+<div class="text-on-surface-variant font-label-caps opacity-50">© 2025 VICTOR. ALL RIGHTS RESERVED.</div>
+</footer>
+<script src="js/site.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Hero Entrance
+        const heroHeading = document.querySelector('.hero-heading');
+        setTimeout(() => {
+            heroHeading.classList.remove('opacity-0', 'translate-y-10');
+            heroHeading.classList.add('opacity-100', 'translate-y-0', 'transition-all', 'duration-1000', 'ease-out');
+        }, 300);
+
+        // Magnet Effect
+        const magnetTarget = document.querySelector('#magnet-target img');
+        const magnetContainer = document.querySelector('.magnet-container');
+        
+        if(magnetContainer && magnetTarget) {
+            magnetContainer.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = magnetContainer.getBoundingClientRect();
+                const x = (e.clientX - left - width / 2) * 0.1;
+                const y = (e.clientY - top - height / 2) * 0.1;
+                magnetTarget.style.transform = `translate(${x}px, ${y}px) rotateX(${-y/8}deg) rotateY(${x/8}deg)`;
+            });
+
+            magnetContainer.addEventListener('mouseleave', () => {
+                magnetTarget.style.transform = `translate(0, 0) rotateX(0) rotateY(0)`;
+            });
+        }
+
+        // Project Card Stacking Scale Effect
+        const cards = document.querySelectorAll('.sticky-card');
+        window.addEventListener('scroll', () => {
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                const top = rect.top;
+                if(top < 200 && top > 0) {
+                    const scale = 1 - ( (200 - top) / 2000 );
+                    card.style.transform = `scale(${scale})`;
+                    card.style.opacity = 1 - ( (200 - top) / 1000 );
+                } else if (top <= 0) {
+                    card.style.transform = `scale(0.95)`;
+                    card.style.opacity = '0.9';
+                } else {
+                    card.style.transform = `scale(1)`;
+                    card.style.opacity = '1';
+                }
+            });
+        });
+    });
+</script>
+</body></html>

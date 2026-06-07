@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VICTOR | System Integration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#bdc8d0",
+                    "surface-bright": "#3a3939",
+                    "tertiary-container": "#c2c7d2",
+                    "tertiary-fixed": "#dee2ee",
+                    "on-primary-container": "#535252",
+                    "tertiary": "#dfe3ef",
+                    "inverse-primary": "#5f5e5d",
+                    "secondary": "#bdc8d0",
+                    "on-secondary": "#273238",
+                    "accent-gray": "#8e9192",
+                    "surface-container-highest": "#353434",
+                    "outline-variant": "#454744",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary-fixed": "#e5e2e1",
+                    "on-background": "#e5e2e1",
+                    "surface-deep": "#0e0e0e",
+                    "on-secondary-fixed": "#131d23",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-high": "#2b2a2a",
+                    "secondary-fixed": "#d9e4ec",
+                    "primary": "#e5e2e1",
+                    "outline-dim": "#444748",
+                    "secondary-container": "#404b51",
+                    "primary-container": "#c9c6c5",
+                    "error-container": "#93000a",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#424750",
+                    "surface-tint": "#c9c6c5",
+                    "background": "#0c0c0c",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#2c3139",
+                    "surface-variant": "#353434",
+                    "surface": "#141313",
+                    "on-secondary-container": "#afbac2",
+                    "surface-container-low": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#c2c6d2",
+                    "surface-dim": "#141313",
+                    "surface-muted": "#1c1b1b",
+                    "on-tertiary-fixed": "#171c24",
+                    "on-tertiary-container": "#4e535c",
+                    "on-primary": "#313030",
+                    "on-error": "#690005",
+                    "outline": "#8f918d",
+                    "on-primary-fixed-variant": "#474646",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface-variant": "#c5c7c2",
+                    "on-secondary-fixed-variant": "#3e484f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "timeline-offset": "3.25rem",
+                    "section-gap": "clamp(4rem, 15vh, 12rem)",
+                    "element-gap": "2rem",
+                    "container-padding": "5vw"
+            },
+            "fontFamily": {
+                    "body-lg": ["Kanit"],
+                    "body-md": ["Kanit"],
+                    "display-lg": ["Kanit"],
+                    "label-micro": ["Kanit"],
+                    "headline-md": ["Kanit"],
+                    "label-caps": ["Kanit"],
+                    "display-xl": ["Kanit"]
+            },
+            "fontSize": {
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["clamp(2.5rem, 6vw, 5rem)", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-micro": ["0.65rem", {"letterSpacing": "0.15em", "fontWeight": "400"}],
+                    "headline-md": ["clamp(1.5rem, 4vw, 2.5rem)", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "display-xl": ["clamp(3.5rem, 10vw, 8rem)", {"lineHeight": "0.9", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 48;
+        }
+        .backdrop-noise {
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.03;
+        }
+        .glitch-reveal {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .reveal-active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(229, 226, 225, 0.2);
+            color: transparent;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+        }
+    </style>
+<link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary" data-page="services">
+<header class="site-header fixed top-0 left-0 w-full z-[60] flex justify-between items-center px-container-padding py-6 bg-background/80 backdrop-blur-lg border-b border-outline-variant/20 transition-transform duration-300" id="site-header">
+<a class="font-display-lg text-display-lg font-black tracking-tighter text-primary hover:opacity-80 transition-opacity" href="home.html">VICTOR</a>
+<button type="button" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<nav class="hidden md:flex items-center gap-8" id="site-nav">
+<a class="site-nav-link font-label-caps text-label-caps uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" data-nav="work" href="work.html">Work</a>
+<a class="site-nav-link font-label-caps text-label-caps uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" data-nav="services" href="service.html">Services</a>
+<a class="site-nav-link font-label-caps text-label-caps uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" data-nav="about" href="about.html">About</a>
+<a class="site-nav-link font-label-caps text-label-caps uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" data-nav="contact" href="contact.html">Contact</a>
+</nav>
+<a class="hidden md:flex font-label-caps text-label-caps uppercase tracking-widest text-on-primary bg-primary px-6 py-2.5 transition-all duration-300 active:scale-95" href="mailto:www44victor@gmail.com">CONNECT</a>
+</header>
+<div class="fixed inset-0 z-[70] bg-background/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+<button type="button" class="absolute top-6 right-[5vw] text-on-surface p-2" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="home" href="home.html">Home</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="work" href="work.html">Work</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="services" href="service.html">Services</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="about" href="about.html">About</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="contact" href="contact.html">Contact</a>
+<a class="font-label-caps text-label-caps uppercase text-on-primary bg-primary px-10 py-4 mt-4" href="mailto:www44victor@gmail.com">CONNECT</a>
+</div>
+<nav class="fixed left-0 w-full z-40 hidden md:flex justify-center gap-6 px-container-padding py-3 bg-background/60 backdrop-blur-sm border-b border-outline-variant/10" id="site-subnav">
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="service.html">← All Services</a>
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="custom_bus.html">Custom Systems</a>
+<a class="font-label-caps text-[0.65rem] text-primary" href="unified_arch.html">Integration</a>
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="system_flow.html">Workflow</a>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="site-hero flex flex-col justify-center px-container-padding pb-section-gap relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="System Integration Visual" class="w-full h-full object-cover grayscale brightness-50" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="font-label-caps text-label-caps text-accent-gray mb-4 block tracking-[0.4em]">SERVICE / CAPABILITIES</span>
+<h1 class="font-display-xl text-display-xl mb-8 uppercase">Unified<br/>Architectures.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    We connect fragmented ecosystems via custom APIs and third-party webhooks to create seamless, automated workflows that drive technical dominance.
+                </p>
+<div class="mt-12 flex gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest hover:bg-surface-bright transition-colors inline-block" href="contact.html">INITIATE PROTOCOL</a>
+<div class="h-14 w-[1px] bg-outline-variant mx-4"></div>
+<div class="flex flex-col justify-center">
+<span class="font-label-micro text-label-micro text-accent-gray">STATUS</span>
+<span class="font-label-caps text-label-caps text-primary">OPERATIONAL</span>
+</div>
+</div>
+</div>
+<div class="absolute right-container-padding bottom-20 hidden lg:block">
+<div class="flex flex-col items-center gap-4">
+<span class="vertical-text font-label-caps text-label-caps text-accent-gray uppercase tracking-widest">SCROLL TO EXPLORE</span>
+<div class="h-24 w-[1px] bg-outline-variant relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-primary animate-[bounce_2s_infinite]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: The Connectivity Gap -->
+<section class="px-container-padding py-section-gap grid lg:grid-cols-12 gap-element-gap items-center border-t border-outline-variant">
+<div class="lg:col-span-5">
+<span class="font-label-caps text-label-caps text-accent-gray mb-6 block uppercase">01 / The Problem</span>
+<h2 class="font-display-lg text-display-lg uppercase mb-8">The Connectivity Gap</h2>
+<div class="space-y-6 text-secondary font-body-md text-body-md">
+<p>Modern enterprises operate across an increasingly fragmented digital landscape. Data siloes create friction, slowing down decision-making and manual processes introduce human error into critical paths.</p>
+<p>Siloed data isn't just a technical debt; it's a structural failure. Integration solves this by building bridges between isolated nodes of information, turning a collection of tools into a singular, powerful engine.</p>
+</div>
+</div>
+<div class="lg:col-span-6 lg:col-start-8 relative">
+<div class="aspect-square bg-surface-container border border-outline-variant overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A technical blueprint overlaying a 3D wireframe of a cybernetic dragon, symbolizing the marriage of structure and raw power in system architecture. The color palette is strictly deep blacks and electric blue highlights." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-background border border-outline-variant p-8 hidden md:block max-w-[280px]">
+<span class="font-label-micro text-label-micro text-accent-gray mb-2 block uppercase">INTEGRATION METRIC</span>
+<div class="font-display-lg text-headline-md text-primary font-black">95.4%</div>
+<p class="font-label-caps text-label-caps text-secondary mt-2">REDUCTION IN LATENCY</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Core Pillars (Bento Grid) -->
+<section class="px-container-padding py-section-gap bg-surface-deep">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-accent-gray mb-4 block uppercase">02 / Core Integration Pillars</span>
+<h2 class="font-display-lg text-display-lg uppercase">Architectural Nodes</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Pillar 1 -->
+<div class="bg-surface border border-outline-variant p-8 hover:bg-surface-container transition-all duration-300 group">
+<span class="material-symbols-outlined text-[48px] text-primary mb-6 block group-hover:scale-110 transition-transform">api</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">API Development</h3>
+<p class="font-body-md text-body-md text-secondary">Custom RESTful and GraphQL interfaces designed for high throughput and military-grade security.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface border border-outline-variant p-8 hover:bg-surface-container transition-all duration-300 group">
+<span class="material-symbols-outlined text-[48px] text-primary mb-6 block group-hover:scale-110 transition-transform">hub</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Webhook Orchestration</h3>
+<p class="font-body-md text-body-md text-secondary">Event-driven triggers that synchronize global systems in real-time without polling overhead.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface border border-outline-variant p-8 hover:bg-surface-container transition-all duration-300 group">
+<span class="material-symbols-outlined text-[48px] text-primary mb-6 block group-hover:scale-110 transition-transform">sync</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Data Synchronization</h3>
+<p class="font-body-md text-body-md text-secondary">Bidirectional pipelines ensuring absolute consistency across CRM, ERP, and custom databases.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface border border-outline-variant p-8 hover:bg-surface-container transition-all duration-300 group">
+<span class="material-symbols-outlined text-[48px] text-primary mb-6 block group-hover:scale-110 transition-transform">layers</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Legacy Bridging</h3>
+<p class="font-body-md text-body-md text-secondary">Modernizing monolithic infrastructure by wrapping legacy protocols in scalable middleware.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Technical Stack -->
+<section class="px-container-padding py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-accent-gray mb-4 block uppercase">03 / The Engine Room</span>
+<h2 class="font-display-lg text-display-lg uppercase">Technical Stack</h2>
+<p class="font-body-md text-body-md text-secondary mt-4">We leverage industry-leading tools and custom-built middleware to orchestrate complex data flows.</p>
+</div>
+<div class="font-label-caps text-label-caps text-primary border border-primary px-6 py-2">
+                    VERIFIED STACK v2.4
+                </div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-outline-variant border border-outline-variant">
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">REST</span>
+</div>
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">GraphQL</span>
+</div>
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">Zapier</span>
+</div>
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">Make</span>
+</div>
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">Node.js</span>
+</div>
+<div class="bg-background aspect-video flex items-center justify-center p-8 group hover:bg-surface transition-colors">
+<span class="font-display-lg text-headline-md text-accent-gray group-hover:text-primary transition-colors uppercase font-bold">PHP</span>
+</div>
+</div>
+</section>
+<!-- Section 4: Case Study -->
+<section class="px-container-padding py-section-gap relative">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-low -z-10"></div>
+<div class="grid lg:grid-cols-12 gap-element-gap items-center">
+<div class="lg:col-span-7">
+<div class="relative aspect-video overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A sleek, high-tech handheld controller featuring glowing blue LED accents and a transparent glass touch interface. The device is floating in a dark, atmospheric studio space with soft lens flare and smoke effects, representing tactile control and advanced human-machine interface." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background to-transparent opacity-60"></div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:pl-12">
+<span class="font-label-caps text-label-caps text-accent-gray mb-4 block uppercase">04 / Proven Impact</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg uppercase mb-6">Omni-Channel Synchronization</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">Implementing a unified POS and Inventory management bridge for a national wholesaler, automating over 1.2M transactions per quarter with zero data drift.</p>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-accent-gray">DURATION</span>
+<span class="font-label-caps text-label-caps text-primary">12 WEEKS</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-accent-gray">NODES</span>
+<span class="font-label-caps text-label-caps text-primary">14 APIS / 22 WEBHOOKS</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-accent-gray">EFFICIENCY</span>
+<span class="font-label-caps text-label-caps text-primary">+42% YEAR-OVER-YEAR</span>
+</div>
+</div>
+<a class="mt-12 group flex items-center gap-4 text-primary font-label-caps text-label-caps tracking-widest" href="work.html">
+                        VIEW PROJECTS
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap px-container-padding text-center border-t border-outline-variant">
+<h2 class="text-outline font-display-xl text-display-xl uppercase mb-8">Ready to Integrate?</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6 items-center">
+<a class="bg-primary text-on-primary px-12 py-6 font-display-lg text-headline-md uppercase font-black hover:invert transition-all duration-500 inline-block" href="contact.html">START PROJECT</a>
+<a class="text-accent-gray font-label-caps text-label-caps tracking-widest uppercase hover:text-primary transition-colors" href="tel:+255616509415">OR CALL +255 616 509 415</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-deep w-full py-section-gap border-t border-outline-variant flex flex-col md:flex-row justify-between items-end px-container-padding w-full">
+<div class="flex flex-col gap-8 w-full md:w-auto mb-12 md:mb-0">
+<div class="font-display-xl text-display-xl-mobile md:text-display-xl text-primary opacity-10">VICTOR</div>
+<div class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim">©2024 VICTOR. ENGINEERED IMMERSION.</div>
+</div>
+<div class="flex flex-col items-end gap-6 w-full md:w-auto">
+<div class="flex flex-wrap gap-6 md:gap-8">
+<a class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim hover:text-primary underline underline-offset-8 transition-all hover:translate-x-1 duration-300" href="work.html">Work</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim hover:text-primary underline underline-offset-8 transition-all hover:translate-x-1 duration-300" href="service.html">Services</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim hover:text-primary underline underline-offset-8 transition-all hover:translate-x-1 duration-300" href="about.html">About</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary-fixed-dim hover:text-primary underline underline-offset-8 transition-all hover:translate-x-1 duration-300" href="contact.html">Contact</a>
+</div>
+<div class="font-label-micro text-label-micro text-accent-gray tracking-[0.3em]">BASED IN DAR ES SALAAM, TZ</div>
+</div>
+</footer>
+<script>
+        // Minimal interaction logic for atmospheric effects
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            // Subtle parallax for backgrounds
+            const bgImages = document.querySelectorAll('.grayscale');
+            bgImages.forEach(img => {
+                img.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px) scale(1.05)`;
+            });
+        });
+
+        // Intersection Observer for scroll reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glitch-reveal').forEach(el => observer.observe(el));
+    </script>
+<script src="js/site.js"></script>
+</body></html>

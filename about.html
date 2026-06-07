@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About — VICTOR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,600;0,700;0,800;0,900;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#afbac2",
+                    "on-primary-fixed-variant": "#474646",
+                    "primary": "#e5e2e1",
+                    "surface-container-high": "#2b2a2a",
+                    "secondary-fixed": "#d9e4ec",
+                    "secondary-fixed-dim": "#bdc8d0",
+                    "on-surface-variant": "#c5c7c2",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "tertiary-fixed-dim": "#c2c6d2",
+                    "inverse-on-surface": "#313030",
+                    "on-primary-container": "#535252",
+                    "on-primary": "#313030",
+                    "outline-variant": "#454744",
+                    "background": "#0c0c0c",
+                    "on-secondary": "#273238",
+                    "on-surface": "#e5e2e1",
+                    "outline-dim": "#444748",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3e484f",
+                    "surface-dim": "#141313",
+                    "on-error": "#690005",
+                    "accent-gray": "#8e9192",
+                    "inverse-primary": "#5f5e5d",
+                    "surface": "#141313",
+                    "on-tertiary-container": "#4e535c",
+                    "surface-bright": "#3a3939",
+                    "on-tertiary-fixed": "#171c24",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed": "#dee2ee",
+                    "surface-deep": "#0e0e0e",
+                    "secondary": "#bdc8d0",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary": "#dfe3ef",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-container": "#404b51",
+                    "on-secondary-fixed": "#131d23",
+                    "surface-muted": "#1c1b1b",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-tint": "#c9c6c5",
+                    "surface-container-highest": "#353434",
+                    "surface-container": "#201f1f",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-container": "#c9c6c5",
+                    "outline": "#8f918d",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#c2c7d2",
+                    "on-tertiary-fixed-variant": "#424750",
+                    "on-tertiary": "#2c3139",
+                    "surface-variant": "#353434"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "timeline-offset": "3.25rem",
+                    "section-gap": "clamp(4rem, 15vh, 12rem)",
+                    "container-padding": "5vw",
+                    "element-gap": "2rem"
+            },
+            "fontFamily": {
+                    "body-lg": ["Kanit"],
+                    "body-md": ["Kanit"],
+                    "label-micro": ["Kanit"],
+                    "label-caps": ["Kanit"],
+                    "headline-md": ["Kanit"],
+                    "display-xl": ["Kanit"],
+                    "display-lg": ["Kanit"]
+            },
+            "fontSize": {
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "label-micro": ["0.65rem", {"letterSpacing": "0.15em", "fontWeight": "400"}],
+                    "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "headline-md": ["clamp(1.5rem, 4vw, 2.5rem)", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-xl": ["clamp(3.5rem, 10vw, 8rem)", {"lineHeight": "0.9", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "display-lg": ["clamp(2.5rem, 6vw, 5rem)", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0c0c0c;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .magnet-button {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .magnet-button:active {
+            transform: scale(0.95);
+        }
+
+        .scroll-snap-container {
+            scroll-snap-type: y proximity;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #2a2a2a, transparent);
+        }
+    </style>
+<link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="font-body-md text-body-md scroll-snap-container" data-page="about">
+<header class="site-header fixed top-0 left-0 w-full z-[60] flex justify-between items-center px-container-padding py-6 bg-background/80 backdrop-blur-lg border-b border-outline-variant/20 transition-transform duration-300" id="site-header">
+<a class="font-display-lg text-headline-md tracking-tighter text-on-surface hover:text-primary transition-colors" href="home.html">VICTOR</a>
+<button type="button" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<nav class="hidden md:flex items-center gap-8" id="site-nav">
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="work" href="work.html">Work</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="services" href="service.html">Services</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="about" href="about.html">About</a>
+<a class="site-nav-link font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" data-nav="contact" href="contact.html">Contact</a>
+</nav>
+<a class="hidden md:flex bg-on-background text-background px-6 py-2 font-label-caps text-label-caps hover:bg-primary transition-all duration-300" href="contact.html">Hire Me</a>
+</header>
+<div class="fixed inset-0 z-[70] bg-background/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+<button type="button" class="absolute top-6 right-[5vw] text-on-surface p-2" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="home" href="home.html">Home</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="work" href="work.html">Work</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="services" href="service.html">Services</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="about" href="about.html">About</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="contact" href="contact.html">Contact</a>
+<a class="bg-on-background text-background px-10 py-4 font-label-caps text-label-caps mt-4" href="contact.html">Hire Me</a>
+</div>
+<main>
+<!-- Narrative Hero -->
+<section class="site-hero site-hero--end relative px-container-padding pb-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Atmospheric 3D art" class="w-full h-full object-cover opacity-60 grayscale scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLu8S2mXMZ5sPeezcGLf_heB-O0aqDC525pIPoGFx89fyDYwAoIODrG1VzGSgQhK0CrkGhoWTLUCwu3heMSoKdJziC3FfKI82cioIjga3uYH2HTNKSjaHB625-KHKBVKrcF17e1H7jThw4K7OIrAJKzp5sWjbZfq3XrD6EZTiBOt07F6bjWCZ76ESDorqZWoWT_wKZC7R07dNBw26WsA_-FVbvFswO8knhhMDY4PNmAcRr1pUq36WXyXRg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 fade-in" style="animation-delay: 0.2s;">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4 block">PORTFOLIO NARRATIVE</span>
+<h1 class="font-display-xl text-display-xl text-on-background leading-none uppercase">
+                SOLVING <br/> COMPLEXITY
+            </h1>
+<p class="mt-8 max-w-xl font-body-lg text-body-lg text-on-surface-variant">
+                Victor operates at the intersection of technical rigor and business insight. A Computer Science major with over 4 years of experience and 15+ real-world projects, he crafts robust digital systems that streamline operations and drive business growth.
+            </p>
+</div>
+</section>
+<!-- The Philosophy -->
+<section class="py-section-gap px-container-padding flex flex-col items-center justify-center text-center bg-surface-container-lowest">
+<div class="reveal-on-scroll max-w-4xl" id="philosophy-content">
+<span class="material-symbols-outlined text-outline text-5xl mb-8" style="font-variation-settings: 'FILL' 0;">format_quote</span>
+<h2 class="font-display-lg text-display-lg italic text-primary leading-tight">
+                "I don't just write code;<br/>I engineer business solutions that scale."
+            </h2>
+<div class="mt-12 w-24 h-px bg-outline-variant mx-auto"></div>
+<p class="mt-12 font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Based in Dar es Salaam, Tanzania, Victor focuses on the permanence of efficiency. Every system is a strategic decision, every feature a response to a real-world business challenge transformed into a scalable digital solution.
+            </p>
+</div>
+</section>
+<!-- The Journey -->
+<section class="py-section-gap px-container-padding grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+<div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+<div class="relative aspect-square rounded-lg overflow-hidden border border-surface-variant">
+<img alt="Wireframe to reality concept" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLYctkpQWM1IMPi8hvltRUTSvDNTFBj8eKgCBCSfEUMPZslCZrGvtGLoPAXg7ETMKzKcIkT-Lh1wO4BX3kM-se5AqO92JQ0LX5u40-CM_9I1kVW9xBkh3MspTiWUCWoqf1Vfh15uT_ZYA9yeVn9n3HDxwiTpMGBXlfRVr3c3X8trs3F-NigqTr42z4Sg2aYpCxqBFS-BcEO3mCstyPln0eBy_mh5AXZm8jneZlVqMVYUkK_7jsgibqXm0Q"/>
+<div class="absolute bottom-6 left-6 font-label-caps text-label-caps bg-background/80 backdrop-blur-md px-4 py-2">
+                    PHASE 01: THE FOUNDATION
+                </div>
+</div>
+</div>
+<div class="space-y-12 relative">
+<div class="absolute left-0 md:-left-12 top-0 bottom-0 w-px timeline-line hidden md:block"></div>
+<div class="reveal-on-scroll relative pl-0 md:pl-8">
+<div class="hidden md:block absolute left-[-52px] top-2 w-2 h-2 rounded-full bg-primary ring-8 ring-background"></div>
+<h3 class="font-headline-md text-headline-md text-on-background">The Technical Foundation</h3>
+<p class="mt-4 text-on-surface-variant font-body-md">Starting with a strong science background at Mzumbe Secondary, Victor mastered the logic and mathematical precision required for high-level software architecture.</p>
+</div>
+<div class="reveal-on-scroll relative pl-0 md:pl-8" style="transition-delay: 0.1s;">
+<div class="hidden md:block absolute left-[-52px] top-2 w-2 h-2 rounded-full bg-on-surface-variant opacity-40 ring-4 ring-background"></div>
+<h3 class="font-headline-md text-headline-md text-on-background text-primary">Real-World Delivery</h3>
+<p class="mt-4 text-on-surface-variant font-body-md">Transitioning from academic theory to professional practice, he delivered 15+ projects for schools and businesses, turning complex client needs into clear technical solutions.</p>
+</div>
+<div class="reveal-on-scroll relative pl-0 md:pl-8" style="transition-delay: 0.2s;">
+<div class="hidden md:block absolute left-[-52px] top-2 w-2 h-2 rounded-full bg-on-surface-variant opacity-40 ring-4 ring-background"></div>
+<h3 class="font-headline-md text-headline-md text-on-background">Scalable Systems</h3>
+<p class="mt-4 text-on-surface-variant font-body-md">Today, Victor builds unified business ecosystems. His work is no longer just about the application, but the operational efficiency and growth it empowers.</p>
+</div>
+</div>
+</section>
+<!-- The Studio / Process -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-container-padding mb-16">
+<span class="font-label-caps text-label-caps text-outline block mb-4">METHODOLOGY</span>
+<h2 class="font-display-lg text-display-lg text-on-background uppercase">THE CRAFT OF <br/> EFFICIENCY</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-element-gap px-container-padding">
+<div class="md:col-span-7 reveal-on-scroll">
+<div class="aspect-video w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-surface-variant group">
+<img alt="High fidelity 3D render" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" src="https://lh3.googleusercontent.com/aida/AP1WRLs8G5JJ9xnep8j70RFDJ-X2r6iPBh10Z07OxAYGbTrMhTTVz1oaZ2Mk5PAegsHwW58NPHXPQLgGB_CpWqzzCn1trE6yCrFVB5c2i8D9ZoBXf_5QR57U2oNyz6pvzzVyQhGp0BZ3yKN_rF8NqrqrxZvRMU2Cdr-q3DLtQB7SU_XflH8dNre5DaKPrgkFotoqe41GLUaEtnkcq5qT7JpJhxhkDtu6pTA7VosYl_26VBeF_ri5WXVUKuAvlT8"/>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center space-y-8 reveal-on-scroll" style="transition-delay: 0.3s;">
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/20">
+<h4 class="font-headline-md text-headline-md text-on-background mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">terminal</span>
+                        Technical Rigor
+                    </h4>
+<p class="text-on-surface-variant">Victor's obsession with clean, scalable code is legendary. He treats every database schema and API integration with the reverence of a master craftsman, ensuring long-term reliability.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/20">
+<h4 class="font-headline-md text-headline-md text-on-background mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">business_center</span>
+                        Business Logic
+                    </h4>
+<p class="text-on-surface-variant">Operational accuracy is the bedrock. From automated payroll calculations to complex inventory management, the goal is total business transparency and control.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-container-padding text-center">
+<div class="reveal-on-scroll border border-surface-variant p-20 rounded-3xl bg-primary-container relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<h2 class="font-display-xl text-display-xl text-on-background relative z-10">READY TO EVOLVE?</h2>
+<p class="mt-6 font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto relative z-10">Let's build a new reality together. Currently accepting select commissions for 2025.</p>
+<div class="mt-12 flex justify-center relative z-10">
+<a class="magnet-button group flex items-center gap-4 bg-on-background text-background px-12 py-5 rounded-full font-label-caps text-label-caps hover:bg-primary transition-all duration-300" href="contact.html">
+                    START A PROJECT
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap border-t border-surface-variant bg-surface flex flex-col md:flex-row justify-between items-center px-container-padding gap-element-gap">
+<a class="text-headline-md font-headline-md text-on-background hover:text-primary transition-colors" href="home.html">VICTOR</a>
+<div class="flex flex-wrap gap-6 md:gap-8 font-body-md text-body-md justify-center">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400" href="work.html">Work</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400" href="service.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-400" href="contact.html">Contact</a>
+</div>
+<div class="font-label-caps text-[0.65rem] text-on-surface-variant tracking-widest">
+        © 2025 VICTOR — ALL RIGHTS RESERVED
+    </div>
+</footer>
+<script src="js/site.js"></script>
+<script>
+    // Intersection Observer for scroll reveals
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // Magnet Button Interaction
+    const magnetBtns = document.querySelectorAll('.magnet-button');
+    magnetBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0px, 0px)`;
+        });
+    });
+
+</script>
+</body></html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | VICTOR / DEV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        
+        body {
+            background-color: #0C0C0C;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .magnet-button {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .project-card-border {
+            border: 1px solid transparent;
+            transition: border-color 0.4s ease;
+        }
+        .project-card-border:hover {
+            border-color: #2A2A2A;
+        }
+
+        .nav-underline {
+            position: relative;
+        }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background-color: #c9c6c5;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-underline:hover::after {
+            width: 100%;
+        }
+
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(42, 42, 42, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0C0C0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A2A;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#2c3139",
+                      "primary-fixed": "#e5e2e1",
+                      "secondary-fixed": "#d9e4ec",
+                      "on-tertiary-fixed": "#171c24",
+                      "tertiary-fixed-dim": "#c2c6d2",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a3939",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#070c14",
+                      "inverse-primary": "#5f5e5e",
+                      "on-tertiary-fixed-variant": "#424750",
+                      "tertiary-fixed": "#dee2ee",
+                      "secondary-container": "#404b51",
+                      "on-secondary": "#273238",
+                      "surface-variant": "#353434",
+                      "on-surface-variant": "#c4c7c7",
+                      "surface-container": "#201f1f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-secondary-container": "#afbac2",
+                      "tertiary": "#c2c6d2",
+                      "surface": "#141313",
+                      "primary": "#c9c6c5",
+                      "outline": "#8e9192",
+                      "on-primary": "#313030",
+                      "on-secondary-fixed-variant": "#3e484f",
+                      "on-primary-container": "#7b7a79",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed": "#131d23",
+                      "on-background": "#e5e2e1",
+                      "on-primary-fixed-variant": "#474646",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-dim": "#141313",
+                      "on-tertiary-container": "#757a85",
+                      "primary-container": "#0c0c0c",
+                      "background": "#141313",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container-high": "#2b2a2a",
+                      "surface-tint": "#c9c6c5",
+                      "surface-container-highest": "#353434",
+                      "on-primary-fixed": "#1c1b1b",
+                      "secondary": "#bdc8d0",
+                      "on-error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#bdc8d0",
+                      "on-surface": "#e5e2e1",
+                      "outline-variant": "#444748",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "element-gap": "2rem",
+                      "section-gap": "clamp(4rem, 15vh, 12rem)",
+                      "container-padding": "5vw"
+              },
+              "fontFamily": {
+                      "display-xl": ["Kanit"],
+                      "headline-md": ["Kanit"],
+                      "display-lg": ["Kanit"],
+                      "body-md": ["Kanit"],
+                      "label-caps": ["Kanit"],
+                      "body-lg": ["Kanit"]
+              },
+              "fontSize": {
+                      "display-xl": ["clamp(3.5rem, 10vw, 8rem)", {"lineHeight": "0.9", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                      "headline-md": ["clamp(1.5rem, 4vw, 2.5rem)", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-lg": ["clamp(2.5rem, 6vw, 5rem)", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                      "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "300"}]
+              }
+            },
+          },
+        }
+    </script>
+<link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="bg-background selection:bg-primary selection:text-on-primary" data-page="services">
+<header class="site-header fixed top-0 left-0 w-full z-[60] flex justify-between items-center px-[5vw] py-6 bg-background/80 backdrop-blur-lg border-b border-outline-variant/20 transition-transform duration-300" id="site-header">
+<a class="font-display-accent text-primary font-black text-2xl tracking-tighter hover:opacity-80 transition-opacity" href="home.html">VICTOR / DEV</a>
+<button type="button" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<nav class="hidden md:flex items-center gap-8" id="site-nav">
+<a class="site-nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors nav-underline" data-nav="work" href="work.html">Work</a>
+<a class="site-nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors nav-underline" data-nav="services" href="service.html">Services</a>
+<a class="site-nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors nav-underline" data-nav="about" href="about.html">About</a>
+<a class="site-nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors nav-underline" data-nav="contact" href="contact.html">Contact</a>
+</nav>
+<a class="hidden md:flex magnet-button bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-all" href="mailto:www44victor@gmail.com">Let's Talk</a>
+</header>
+<div class="fixed inset-0 z-[70] bg-background/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+<button type="button" class="absolute top-6 right-[5vw] text-on-surface p-2" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="home" href="home.html">Home</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="work" href="work.html">Work</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="services" href="service.html">Services</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="about" href="about.html">About</a>
+<a class="font-display-lg text-display-lg text-primary" data-mobile-nav="contact" href="contact.html">Contact</a>
+<a class="magnet-button bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps mt-4" href="mailto:www44victor@gmail.com">Let's Talk</a>
+</div>
+<main class="site-content">
+<!-- Hero Section -->
+<section class="min-h-[70vh] flex flex-col justify-center px-[5vw] mb-section-gap">
+<h1 class="font-display-xl text-display-xl text-primary opacity-0 fade-in stagger-1 mb-8">
+                Services
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl opacity-0 fade-in stagger-2">
+                I don't just write code; I engineer business solutions that scale. My work blends technical rigor with deep business insight to solve complex operational challenges through robust software architecture.
+            </p>
+<div class="mt-12 opacity-0 fade-in stagger-3">
+<span class="material-symbols-outlined text-primary text-4xl animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Service: Web Design & UI/UX -->
+<section class="px-[5vw] mb-section-gap grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<div class="project-card-border overflow-hidden rounded-lg">
+<img alt="Web Design &amp; UI/UX" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIWqwWmV6Qv05wYuH4KnH9HdOJ1dbaFDCT6AwEN56bxUYMIv25BG4hjprUd1Gtf0TH-mTOgxojl7xl6Scd1nKJ-bMtTaKZ3oDae-mJXwx1gHLKELfgLGu6X76hX8TiWpTCbR3db-FyNc7r1rvCvaGUBnvXHzQf_kxmEb2n4jKoSBU2RmujHbo42MS1dHGNO4Gcy49bKsNUbhFRZ1rwL9nb_Z1XvVJczI9Eu4mTLDcHlI2V3u4rDDvp0sLBVqoRsRDnR-S-io4e_c"/>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<span class="font-label-caps text-label-caps text-primary/50 block">01 / DESIGN</span>
+<h2 class="font-display-lg text-display-lg text-primary">Web Design &amp; <br/>UI/UX</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Creating user-friendly, high-conversion interfaces. I focus on intuitive user journeys and accessibility, ensuring your digital presence is as functional as it is visually striking.
+                </p>
+<div class="flex gap-4 flex-wrap pt-4">
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">User Interface</span>
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">Prototyping</span>
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">Accessibility</span>
+</div>
+</div>
+</section>
+<!-- Service: Web Development -->
+<section class="px-[5vw] mb-section-gap grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<span class="font-label-caps text-label-caps text-primary/50 block">02 / DEVELOPMENT</span>
+<h2 class="font-display-lg text-display-lg text-primary">Full-Stack <br/>Engineering</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Building robust, scalable applications using modern stacks like Laravel, React, and Node.js. My code is optimized for performance, security, and long-term maintainability.
+                </p>
+<div class="flex gap-4 flex-wrap pt-4">
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">React / Vue</span>
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">Laravel / PHP</span>
+<span class="px-4 py-1 border border-white/10 rounded-full font-label-caps text-label-caps text-on-surface-variant">Cloud Deployment</span>
+</div>
+</div>
+<div>
+<div class="project-card-border overflow-hidden rounded-lg">
+<img alt="Web Development" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIUqbCoCjmcwj3Za0TKYr-Jy2YXyXIWx5-yu2EozxaCfMQlK-EAZqvOf7JaigGQwfPstY_v3IH4YPVp_zy9fgz56b9P2jld0JlgbycVLHMEm11zQYX735tkaF4msZCsCHpbW26fk-7X7lzj4GfPohfMmC0u7eQqDC7pfMUJVtYucokRY5UW9rTG-3fFt-6KTP23lMgQBMhScQ43ZrGb9W3VXbBEf9vP4KSVdM8c3onC5kQuiPFYbu9EhWcu1lh9d9Td0pA-vHcl-0"/>
+</div>
+</div>
+</section>
+<!-- Bento Grid Services -->
+<section class="px-[5vw] mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Custom Business Systems -->
+<a class="md:col-span-2 glass-panel p-12 rounded-xl flex flex-col justify-between group service-link-card hover:border-primary/30 transition-colors" href="custom_bus.html">
+<div>
+<span class="font-label-caps text-label-caps text-primary/50 mb-4 block">03 / SOLUTIONS</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Custom Business Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Specialized solutions for HR, E-commerce, POS, and School Management. I automate the mundane so you can focus on growth. Built to handle real-world business logic.
+                        </p>
+</div>
+<div class="mt-8 overflow-hidden h-48 rounded-lg">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmD2pkZoDV6FT9Fe-SXpF1NBZLF-z8V2igqiZqFCM6_6M2XLWVDAcNuxuo53MHgF3iHjMe7ceScPOlQb9G8h1NDN6Omb5_eRgybpsWcoAAmeaexKtLg3hvQYopJW3Vx3v_EUUSuNvvH8-TPj-iQyl2C4D19nxJ2ebmLKC3kdKqHYeBDDyCiiqKMAFVjwYG0RLrFjfJxq-4Qdr2siOfEjicluAK4Dwi2tfdAPtQbMKJFCCxRGnSBpBg-d-lkur3aIeJxt6-l9tl760')"></div>
+</div>
+</a>
+<!-- Integration & Strategy Column -->
+<div class="flex flex-col gap-6">
+<a class="glass-panel p-8 rounded-xl flex-1 service-link-card hover:border-primary/30 transition-colors" href="unified_arch.html">
+<span class="font-label-caps text-label-caps text-primary/50 mb-2 block">04 / INTEGRATION</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">System Integration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Connecting fragmented ecosystems via custom APIs and third-party webhooks.
+                        </p>
+</a>
+<a class="glass-panel p-8 rounded-xl flex-1 bg-primary text-on-primary service-link-card hover:opacity-90 transition-opacity" href="system_flow.html">
+<span class="font-label-caps text-label-caps text-on-primary/50 mb-2 block">PROCESS</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4">Development Workflow</h3>
+<p class="font-body-md text-body-md text-on-primary/80">
+                            See how projects move from analysis to deployment in four clear phases.
+                        </p>
+</a>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="px-[5vw] mb-section-gap">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-primary/50 block mb-4">THE WORKFLOW</span>
+<h2 class="font-display-lg text-display-lg text-primary">Solving Complexity</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<!-- Step 1 -->
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center font-display-lg text-xl text-primary">1</div>
+<h4 class="font-headline-md text-xl text-primary">Analysis</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep dive into business requirements and non-technical client needs.</p>
+</div>
+<!-- Step 2 -->
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center font-display-lg text-xl text-primary">2</div>
+<h4 class="font-headline-md text-xl text-primary">Architecture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Designing scalable database structures and system workflows.</p>
+</div>
+<!-- Step 3 -->
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center font-display-lg text-xl text-primary">3</div>
+<h4 class="font-headline-md text-xl text-primary">Development</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Agile implementation with clean code and rigorous testing cycles.</p>
+</div>
+<!-- Step 4 -->
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center font-display-lg text-xl text-primary">4</div>
+<h4 class="font-headline-md text-xl text-primary">Deployment</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Optimization, security hardening, and production launch.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-[5vw] mb-section-gap py-32 bg-surface-container-lowest text-center relative overflow-hidden">
+<!-- Subtle Background Accents -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg text-primary mb-8">Ready to Scale?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+                    Let's discuss how custom software can transform your business operations and drive efficiency.
+                </p>
+<a class="magnet-button inline-block bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps uppercase tracking-[0.3em] hover:tracking-[0.5em] transition-all duration-500 rounded-none shadow-xl" href="contact.html">
+                    Get a Quote
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-white/5 bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-edge-margin-desktop max-w-container-max mx-auto px-[5vw] gap-8">
+<a class="font-display-accent text-primary font-black text-xl hover:opacity-80 transition-opacity" href="home.html">VICTOR</a>
+<div class="flex flex-wrap gap-6 md:gap-8 justify-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-500" href="work.html">Work</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-500" href="service.html">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-500" href="about.html">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all duration-500" href="contact.html">Contact</a>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant/50">
+                © 2025 VICTOR. All rights reserved.
+            </div>
+</div>
+</footer>
+<script src="js/site.js"></script>
+<script>
+        // Magnet effect for buttons
+        document.querySelectorAll('.magnet-button').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+        // Intersection Observer for staggered reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div, section > h2, section > p').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body></html>

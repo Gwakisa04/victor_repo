@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VICTOR | CUSTOM BUSINESS SYSTEMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#0c0c0c",
+                      "on-tertiary": "#2c3139",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e5e2e1",
+                      "outline-variant": "#454744",
+                      "surface-container-highest": "#353434",
+                      "on-primary": "#313030",
+                      "outline-dim": "#444748",
+                      "surface-dim": "#141313",
+                      "on-secondary": "#273238",
+                      "inverse-primary": "#5f5e5d",
+                      "primary-container": "#c9c6c5",
+                      "accent-gray": "#8e9192",
+                      "surface": "#141313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-tint": "#c9c6c5",
+                      "on-primary-container": "#535252",
+                      "on-tertiary-container": "#4e535c",
+                      "on-tertiary-fixed-variant": "#424750",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-secondary-container": "#afbac2",
+                      "on-secondary-fixed-variant": "#3e484f",
+                      "tertiary-fixed": "#dee2ee",
+                      "surface-container-low": "#1c1b1b",
+                      "tertiary-container": "#c2c7d2",
+                      "surface-container-high": "#2b2a2a",
+                      "inverse-on-surface": "#313030",
+                      "surface-bright": "#3a3939",
+                      "outline": "#8f918d",
+                      "primary": "#e5e2e1",
+                      "surface-variant": "#353434",
+                      "tertiary": "#dfe3ef",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "surface-muted": "#1c1b1b",
+                      "on-primary-fixed-variant": "#474646",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#131d23",
+                      "error-container": "#93000a",
+                      "secondary-container": "#404b51",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#bdc8d0",
+                      "secondary-fixed": "#d9e4ec",
+                      "tertiary-fixed-dim": "#c2c6d2",
+                      "on-surface-variant": "#c5c7c2",
+                      "on-surface": "#e5e2e1",
+                      "secondary": "#bdc8d0",
+                      "surface-container": "#201f1f",
+                      "surface-deep": "#0e0e0e",
+                      "primary-fixed": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "on-tertiary-fixed": "#171c24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "timeline-offset": "3.25rem",
+                      "element-gap": "2rem",
+                      "section-gap": "clamp(4rem, 15vh, 12rem)",
+                      "container-padding": "5vw"
+              },
+              "fontFamily": {
+                      "body-md": ["Kanit"],
+                      "body-lg": ["Kanit"],
+                      "label-micro": ["Kanit"],
+                      "label-caps": ["Kanit"],
+                      "headline-md": ["Kanit"],
+                      "display-lg": ["Kanit"],
+                      "display-xl": ["Kanit"]
+              },
+              "fontSize": {
+                      "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "300"}],
+                      "label-micro": ["0.65rem", {"letterSpacing": "0.15em", "fontWeight": "400"}],
+                      "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                      "headline-md": ["clamp(1.5rem, 4vw, 2.5rem)", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-lg": ["clamp(2.5rem, 6vw, 5rem)", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "display-xl": ["clamp(3.5rem, 10vw, 8rem)", {"lineHeight": "0.9", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 48;
+        }
+        .cinematic-vignette {
+            background: radial-gradient(circle, transparent 20%, #0c0c0c 100%);
+        }
+        .noise-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .border-technical {
+            border: 1px solid rgba(69, 71, 68, 0.4);
+        }
+    </style>
+<link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden" data-page="services">
+<div class="fixed inset-0 noise-overlay z-[100] pointer-events-none"></div>
+<header class="site-header fixed top-0 left-0 w-full z-[60] flex justify-between items-center px-container-padding py-6 bg-background/80 backdrop-blur-lg border-b border-outline-variant/20 transition-transform duration-300" id="site-header">
+<a class="font-display-lg text-display-lg tracking-tighter text-on-surface uppercase hover:text-primary transition-colors" href="home.html">VICTOR</a>
+<button type="button" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-label="Open menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<nav class="hidden md:flex items-center gap-8" id="site-nav">
+<a class="site-nav-link font-label-caps text-label-caps text-accent-gray hover:text-primary transition-colors duration-300" data-nav="work" href="work.html">Work</a>
+<a class="site-nav-link font-label-caps text-label-caps text-accent-gray hover:text-primary transition-colors duration-300" data-nav="services" href="service.html">Services</a>
+<a class="site-nav-link font-label-caps text-label-caps text-accent-gray hover:text-primary transition-colors duration-300" data-nav="about" href="about.html">About</a>
+<a class="site-nav-link font-label-caps text-label-caps text-accent-gray hover:text-primary transition-colors duration-300" data-nav="contact" href="contact.html">Contact</a>
+</nav>
+<a class="hidden md:flex bg-primary text-on-primary font-label-caps text-label-caps px-8 py-3 transition-all duration-300 active:scale-95" href="mailto:www44victor@gmail.com">CONNECT</a>
+</header>
+<div class="fixed inset-0 z-[70] bg-background/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+<button type="button" class="absolute top-6 right-[5vw] text-on-surface p-2" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="home" href="home.html">Home</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="work" href="work.html">Work</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="services" href="service.html">Services</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="about" href="about.html">About</a>
+<a class="font-display-lg text-display-lg text-on-surface" data-mobile-nav="contact" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary font-label-caps text-label-caps px-10 py-4 mt-4" href="mailto:www44victor@gmail.com">CONNECT</a>
+</div>
+<nav class="fixed left-0 w-full z-40 hidden md:flex justify-center gap-6 px-container-padding py-3 bg-background/60 backdrop-blur-sm border-b border-outline-variant/10" id="site-subnav">
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="service.html">← All Services</a>
+<a class="font-label-caps text-[0.65rem] text-primary" href="custom_bus.html">Custom Systems</a>
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="unified_arch.html">Integration</a>
+<a class="font-label-caps text-[0.65rem] text-accent-gray hover:text-primary transition-colors" href="system_flow.html">Workflow</a>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="site-hero site-hero--end relative flex flex-col justify-end">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida/AP1WRLu8S2mXMZ5sPeezcGLf_heB-O0aqDC525pIPoGFx89fyDYwAoIODrG1VzGSgQhK0CrkGhoWTLUCwu3heMSoKdJziC3FfKI82cioIjga3uYH2HTNKSjaHB625-KHKBVKrcF17e1H7jThw4K7OIrAJKzp5sWjbZfq3XrD6EZTiBOt07F6bjWCZ76ESDorqZWoWT_wKZC7R07dNBw26WsA_-FVbvFswO8knhhMDY4PNmAcRr1pUq36WXyXRg"/>
+<div class="absolute inset-0 cinematic-vignette"></div>
+</div>
+<div class="relative z-10 px-container-padding pb-20">
+<div class="max-w-5xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block tracking-[0.3em]">SERVICE EXCELLENCE // 01</span>
+<h1 class="font-display-xl text-display-xl uppercase leading-none mb-8">
+                        Custom Business<br/>Systems
+                    </h1>
+<div class="flex flex-col md:flex-row gap-12 items-start md:items-end">
+<p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant">
+                            Engineering digital foundations that breathe life into stagnant operations. We build technical architectures that don't just solve today's problems, but anticipate tomorrow's scale.
+                        </p>
+<div class="h-px flex-grow bg-outline-variant hidden md:block mb-4"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem & Solution -->
+<section class="py-section-gap px-container-padding bg-surface-container-lowest">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 space-y-8">
+<span class="font-label-caps text-label-caps text-accent-gray">THE CHALLENGE</span>
+<h2 class="font-headline-md text-headline-md uppercase border-l-2 border-error pl-6">
+                        Legacy limitations are the invisible ceiling on your growth.
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Fragmented spreadsheets, unscalable off-the-shelf software, and manual data entry aren't just inconveniences—they are operational risks. When your systems can't communicate, your business can't innovate.
+                    </p>
+</div>
+<div class="lg:col-span-2 flex justify-center py-8">
+<span class="material-symbols-outlined text-accent-gray scale-150">trending_flat</span>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<span class="font-label-caps text-label-caps text-primary">THE ARCHITECTURE</span>
+<h2 class="font-headline-md text-headline-md uppercase border-l-2 border-primary pl-6">
+                        Engineered immersion into your specific workflow.
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        VICTOR develops proprietary engines designed around your unique business logic. We replace friction with fluidity through bespoke automation, centralized data hubs, and intuitive control panels.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Core Capabilities (Bento Grid) -->
+<section class="py-section-gap px-container-padding">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-4 block">CORE CAPABILITIES</span>
+<h2 class="font-display-lg text-display-lg uppercase">System Verticals</h2>
+</div>
+<div class="max-w-md text-right">
+<p class="font-body-md text-body-md text-accent-gray">We architect robust, secure, and intuitive platforms for high-stakes environments.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- HR & Payroll -->
+<div class="group border-technical p-10 bg-surface-container hover:bg-surface-bright transition-all duration-500 cursor-default">
+<div class="mb-12">
+<span class="material-symbols-outlined text-4xl text-primary opacity-50 group-hover:opacity-100 transition-opacity">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">HR &amp; Payroll</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Automated tax calculations, performance tracking, and employee portals that eliminate manual friction.</p>
+<ul class="space-y-2 font-label-caps text-[0.65rem] text-accent-gray">
+<li>— AUTOMATED CALCULATIONS</li>
+<li>— SECURE EMPLOYEE PORTALS</li>
+<li>— PERFORMANCE ANALYTICS</li>
+</ul>
+</div>
+<!-- E-commerce -->
+<div class="group border-technical p-10 bg-surface-container hover:bg-surface-bright transition-all duration-500 cursor-default">
+<div class="mb-12">
+<span class="material-symbols-outlined text-4xl text-primary opacity-50 group-hover:opacity-100 transition-opacity">inventory_2</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Inventory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Real-time stock tracking across multiple nodes with dedicated wholesaler portal interfaces.</p>
+<ul class="space-y-2 font-label-caps text-[0.65rem] text-accent-gray">
+<li>— MULTI-NODE TRACKING</li>
+<li>— WHOLESALER PORTALS</li>
+<li>— PREDICTIVE RESTOCKING</li>
+</ul>
+</div>
+<!-- School Management -->
+<div class="group border-technical p-10 bg-surface-container hover:bg-surface-bright transition-all duration-500 cursor-default">
+<div class="mb-12">
+<span class="material-symbols-outlined text-4xl text-primary opacity-50 group-hover:opacity-100 transition-opacity">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Education</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Admin automation and student tracking systems designed for scale and educational precision.</p>
+<ul class="space-y-2 font-label-caps text-[0.65rem] text-accent-gray">
+<li>— ADMIN AUTOMATION</li>
+<li>— STUDENT DATA SILOS</li>
+<li>— COURSE SCHEDULING</li>
+</ul>
+</div>
+<!-- POS Systems -->
+<div class="group border-technical p-10 bg-surface-container hover:bg-surface-bright transition-all duration-500 cursor-default">
+<div class="mb-12">
+<span class="material-symbols-outlined text-4xl text-primary opacity-50 group-hover:opacity-100 transition-opacity">point_of_sale</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">POS Flow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">High-speed retail transactions backed by military-grade security and instant reporting.</p>
+<ul class="space-y-2 font-label-caps text-[0.65rem] text-accent-gray">
+<li>— RAPID TRANSACTIONS</li>
+<li>— ENCRYPTED PROTOCOLS</li>
+<li>— OFFLINE PERSISTENCE</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Case Study Highlight -->
+<section class="py-section-gap bg-surface-deep overflow-hidden">
+<div class="px-container-padding grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="absolute -top-10 -left-10 w-40 h-40 border-l border-t border-primary/20"></div>
+<img alt="" class="w-full grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLs8G5JJ9xnep8j70RFDJ-X2r6iPBh10Z07OxAYGbTrMhTTVz1oaZ2Mk5PAegsHwW58NPHXPQLgGB_CpWqzzCn1trE6yCrFVB5c2i8D9ZoBXf_5QR57U2oNyz6pvzzVyQhGp0BZ3yKN_rF8NqrqrxZvRMU2Cdr-q3DLtQB7SU_XflH8dNre5DaKPrgkFotoqe41GLUaEtnkcq5qT7JpJhxhkDtu6pTA7VosYl_26VBeF_ri5WXVUKuAvlT8"/>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 border-r border-b border-primary/20"></div>
+</div>
+<div class="space-y-10 order-1 lg:order-2">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">CASE STUDY // SECUREHR</span>
+<h2 class="font-display-lg text-display-lg uppercase leading-tight">SecureHR System</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        A total overhaul for a multinational firm requiring ironclad security and seamless cross-border payroll automation.
+                    </p>
+<div class="grid grid-cols-2 gap-8 py-8 border-y border-outline-variant">
+<div>
+<div class="font-display-lg text-headline-md text-primary mb-1">0%</div>
+<div class="font-label-caps text-label-micro text-accent-gray">PAYROLL DISCREPANCIES</div>
+</div>
+<div>
+<div class="font-display-lg text-headline-md text-primary mb-1">400%</div>
+<div class="font-label-caps text-label-micro text-accent-gray">ADMIN EFFICIENCY GAIN</div>
+</div>
+</div>
+<a class="flex items-center gap-4 group" href="work.html">
+<span class="font-label-caps text-label-caps text-primary group-hover:tracking-widest transition-all">VIEW FULL REPORT</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Technical Stack -->
+<section class="py-section-gap px-container-padding">
+<div class="border-y border-outline-variant py-20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<h3 class="font-label-caps text-label-caps text-accent-gray">ENGINEERED WITH</h3>
+<div class="flex flex-wrap justify-center gap-x-16 gap-y-8 items-center opacity-40 grayscale contrast-125">
+<span class="font-display-lg text-3xl font-extrabold tracking-tighter">PHP</span>
+<span class="font-display-lg text-3xl font-extrabold tracking-tighter">MYSQL</span>
+<span class="font-display-lg text-3xl font-extrabold tracking-tighter">LARAVEL</span>
+<span class="font-display-lg text-3xl font-extrabold tracking-tighter">REACT</span>
+<span class="font-display-lg text-3xl font-extrabold tracking-tighter">NODE.JS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="relative py-32 px-container-padding text-center overflow-hidden">
+<div class="relative z-10 max-w-4xl mx-auto space-y-12">
+<h2 class="font-display-xl text-display-xl uppercase leading-none">Modernize Your Operations</h2>
+<p class="font-body-lg text-body-lg text-accent-gray max-w-2xl mx-auto">
+                    Stop fighting your tools and start building your future. Contact VICTOR for a technical consultation.
+                </p>
+<div class="pt-8">
+<a class="inline-block bg-primary text-on-primary font-label-caps text-label-caps px-16 py-6 transition-all duration-300 hover:tracking-[0.3em] active:scale-95" href="contact.html">
+                        START A PROJECT
+                    </a>
+</div>
+</div>
+<!-- Atmospheric background element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-primary/5 blur-[120px] rounded-full z-0"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-deep border-t border-outline-variant w-full py-section-gap px-container-padding flex flex-col md:flex-row justify-between items-end w-full">
+<div class="space-y-8 w-full md:w-auto">
+<div class="font-display-xl text-display-xl text-on-surface opacity-10 leading-none">VICTOR</div>
+<p class="font-label-caps text-label-caps text-accent-gray">© 2024 VICTOR. ENGINEERED IMMERSION.</p>
+</div>
+<div class="flex flex-wrap gap-6 md:gap-8 mt-12 md:mt-0 font-label-caps text-label-caps">
+<a class="text-accent-gray hover:text-primary hover:tracking-widest transition-all duration-500" href="work.html">Work</a>
+<a class="text-accent-gray hover:text-primary hover:tracking-widest transition-all duration-500" href="service.html">Services</a>
+<a class="text-accent-gray hover:text-primary hover:tracking-widest transition-all duration-500" href="about.html">About</a>
+<a class="text-accent-gray hover:text-primary hover:tracking-widest transition-all duration-500" href="contact.html">Contact</a>
+</div>
+</footer>
+<script src="js/site.js"></script>
+<script>
+        // Simple parallax effect for images on scroll
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImage = document.querySelector('section img');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scroll * 0.4}px)`;
+            }
+        });
+
+        // Hover effect for "Magnet" buttons
+        const buttons = document.querySelectorAll('.magnet-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+    </script>
+</body></html>
